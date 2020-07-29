@@ -6,6 +6,7 @@ const char* resposta;
 char texto[256];
 char respostaCopiada[256];
 char dest[256];
+char texto2[32];
 
 
 
@@ -36,14 +37,13 @@ void limitMyString() {
   const char ch = ':';
   char *ret;
   ret = strchr(respostaCopiada, ch);
-  Serial.println(ret);
+  //Serial.println(ret);
 
-    char dest[32];
+  char dest[32];
   memset(dest, '\0', sizeof(dest));
   strncpy(dest, ret, 32);
-  Serial.println(dest);
+  //Serial.println(dest);
 
-  
-
-
+  sprintf(texto2, "{\"ID\"%s}" , dest);
+  Serial.println(texto2);   //{"ID": Wed, 29 Jul 2020 02:23:22}
 }
